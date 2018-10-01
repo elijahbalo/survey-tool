@@ -1,0 +1,30 @@
+
+    <header class="app-header">
+        <div class="app-header__wrapper">
+          <main class="app-header__main">
+            <h1 class="app-header__heading">Browse Through Our Surveys Below</h1>
+          </main>
+        </div>
+      </header>
+
+<main >
+<section class="side__bar"> 
+<ul>
+<li class="track-button" (click)="getSurveyById(1, 'Survey 1')">View Survey 1</li>
+<li class="track-button" (click)="getSurveyById(2, 'Survey 2')">View Survey 2</li>
+<li class="track-button" (click)="getSurveyById(972, 'Survey 3')">View Survey 3</li>
+<li class="track-button" (click)="getAllSurveys('All Surveys')">View All</li>
+
+</ul>
+
+</section>
+
+<section class="content">
+  <h1>{{title}}</h1>
+<app-survey-item *ngFor="let survey of surveys| paginate: { itemsPerPage: 2, currentPage: p }"  [survey]="survey"></app-survey-item> 
+<pagination-controls class="pag" (pageChange)="p = $event"
+                                  directionLinks="false"
+   
+></pagination-controls>
+</section>
+</main>

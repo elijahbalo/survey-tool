@@ -1,0 +1,62 @@
+
+@mixin border-radius($radius) {
+    -webkit-border-radius:$radius;
+    -moz-border-radius:$radius;
+    -ms-border-radius:$radius;
+    -o-border-radius:$radius;
+    border-radius:$radius;
+}
+@mixin borderbox {
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+@mixin clearfix {
+    clear:both;
+    content:"";
+    display:table;
+}
+@mixin animation($str) {
+    -webkit-animation:#{$str};
+    -moz-animation:#{$str};
+    -ms-animation:#{$str};
+    -o-animation:#{$str};
+    animation:#{$str};      
+}
+@mixin transform($properties...) {
+    -webkit-transform:$properties;
+    -moz-transform:$properties;
+    -ms-transform:$properties;
+    -o-transform:$properties;
+    transform:$properties;
+}
+@mixin transition($properties...) {
+    -webkit-transition:$properties;
+    -moz-transition:$properties;
+    -ms-transition:$properties;
+    -o-transition:$properties;
+    transition:$properties;
+}
+@mixin box-shadow($vals...) {
+    -webkit-box-shadow:$vals;
+    -moz-box-shadow:$vals;
+    -o-box-shadow:$vals;
+    box-shadow:$vals;
+}
+@mixin vertical_align {
+    top:50%;
+    position:relative;
+    -webkit-transform:translateY(-50%);
+    -moz-transform:translateY(-50%);
+    -ms-transform:translateY(-50%);
+    transform:translateY(-50%);
+}
+@mixin verticalGradient($from, $to) {
+    background-color:$from; // fallback / image non-cover color
+    background-image:-moz-linear-gradient($from, $to); // Firefox 3.6+
+    background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to)); // Safari 4+, Chrome 1+
+    background-image:-webkit-linear-gradient($from, $to); // Safari 5.1+, Chrome 10+
+    background-image:-o-linear-gradient($from, $to); // Opera 11.10+
+    background-image:-ms-linear-gradient(top, $from 0%, $to 100%); // IE 10+
+    background-image:linear-gradient($from, $to);
+}

@@ -1,0 +1,18 @@
+<table>
+    <tr>
+      <th></th>
+      <th *ngFor="let col of columns">{{col}}</th>
+    </tr>
+    <tr *ngFor="let row of rows">
+      <td>{{row}}</td>
+      
+      <td *ngFor="let col of columns">
+      
+      <div class="select">
+          <input class="radio" type="checkbox"  value="love" >
+        </div>
+        
+      </td>
+    </tr>
+
+  </table>
